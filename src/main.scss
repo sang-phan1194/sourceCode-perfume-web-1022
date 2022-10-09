@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 4rem;
+
+  @include mobile() {
+    padding: 1rem 1rem;
+  }
+
+  .sort-btn-group {
+    display: grid;
+    min-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 7.5rem));
+    grid-gap: 0.5rem;
+    margin-top: 1rem;
+
+    button {
+      height: 2.2rem;
+      font-size: 0.9rem;
+      border: 0.5px solid grey;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: hsl(0, 0%, 70%);
+      }
+    }
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+
+    @include mobile() {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+
+/* styles for Banner component */
+.carousel {
+  text-align: center;
+  padding: 0.25rem;
+
+  img {
+    max-width: 100%;
+  }
+}
