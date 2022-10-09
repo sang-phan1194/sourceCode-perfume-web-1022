@@ -10,8 +10,8 @@ An E-commercial website selling perfume <br/>
 - Responsive for many screen sizes in all pages (home, reviews, cart, product detail,...). <br/>
 
 #Tech stacks: <br/>
-ReactJS for creating components. <br/>
-Redux (Toolkit & React- Redux) for state management. <br/>
-React-router-dom for setting up routing. <br/>
-Firebase for database. <br/>
-Styled with SASS (Grid and flex for responsive), Bootstrap icons and React-loading-skeleton.
+- ReactJS for creating components. <br/>
+- Redux (Toolkit & React- Redux) for state management. <br/>
+- React-router-dom for setting up routing. <br/>
+- Firebase for database. <br/>
+- Styled with SASS (Grid and flex for responsive), Bootstrap icons and React-loading-skeleton.
