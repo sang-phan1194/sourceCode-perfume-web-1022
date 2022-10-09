@@ -1,11 +1,5 @@
 # sourceCode-perfume-web-1022
 An E-commercial website selling perfume <br/>
-Tech stacks: <br /> 
-ReactJS as main stack <br/>
-Redux (Toolkit & React- Redux) for state management. <br/>
-React-router-dom for setting up routing. <br/>
-Firebase for database. <br/>
-Styled with SASS (Grid and flex for responsive), Bootstrap icon and React-loading-skeleton.
 
 #Features:
 - View the products, sort them by name or price (asc or desc). <br/>
@@ -13,4 +7,11 @@ Styled with SASS (Grid and flex for responsive), Bootstrap icon and React-loadin
 - Adjust products quantity or remove them from cart. <br/>
 - Cart information will be saved and wont be lost after reloading page. <br/>
 - View the review posts on the review page. <br/>
-- Responsive for many screen sizes in all pages (home, reviews, cart, product detail,...)
+- Responsive for many screen sizes in all pages (home, reviews, cart, product detail,...). <br/>
+
+#Tech stacks: 
+ReactJS for creating components. <br/>
+Redux (Toolkit & React- Redux) for state management. <br/>
+React-router-dom for setting up routing. <br/>
+Firebase for database. <br/>
+Styled with SASS (Grid and flex for responsive), Bootstrap icons and React-loading-skeleton.
