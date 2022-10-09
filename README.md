@@ -9,7 +9,7 @@ An E-commercial website selling perfume <br/>
 - View the review posts on the review page. <br/>
 - Responsive for many screen sizes in all pages (home, reviews, cart, product detail,...). <br/>
 
-#Tech stacks: 
+#Tech stacks: <br/>
 ReactJS for creating components. <br/>
 Redux (Toolkit & React- Redux) for state management. <br/>
 React-router-dom for setting up routing. <br/>
