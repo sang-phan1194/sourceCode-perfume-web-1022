@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import store from "./redux/store";
-import "./main.scss";
+import "../src/style/main.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import App from "./App";
 

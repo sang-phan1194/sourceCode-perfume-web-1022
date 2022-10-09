@@ -6,7 +6,7 @@ import { db } from "../firebase";
 import Skeleton from "react-loading-skeleton";
 import { Banner } from "./Banner";
 import { add_item } from "../redux/cartSlice";
-import "./productDetail.scss";
+import "../style/productDetail.scss";
 
 export const ProductDetail = () => {
   const { index } = useParams();

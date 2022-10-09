@@ -1,5 +1,5 @@
 import { Banner } from "../components/Banner";
-import "./contact.scss";
+import "../style/contact.scss";
 
 export const Contact = () => {
   return (

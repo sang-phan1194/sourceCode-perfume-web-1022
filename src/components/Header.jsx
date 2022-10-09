@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import "../components/header.scss";
+import "../style/header.scss";
 
 export const Header = () => {
   const [isToggleOn, setToggleOn] = useState(false);

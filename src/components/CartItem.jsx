@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { add_item, remove_item, minus_item } from "../redux/cartSlice";
-import "../components/cartItem.scss";
+import "../style/cartItem.scss";
 
 export const CartItem = ({ id, data }) => {
   const [count, setCount] = useState(data.itemCount);

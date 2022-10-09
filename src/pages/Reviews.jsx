@@ -2,7 +2,7 @@ import { GetDatas } from "../components/GetDatas";
 import { Banner } from "../components/Banner";
 import { ReviewPost } from "../components/ReviewPost";
 import { PostSkeleton } from "../components/PostSkeleton";
-import "./reviews.scss";
+import "../style/reviews.scss";
 
 export const Reviews = () => {
   const { isLoading, datas } = GetDatas("posts");

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { add_item } from "../redux/cartSlice";
-import "./product.scss";
+import "../style/product.scss";
 
 export const Product = ({ index, productData }) => {
   const { productName, brandName, productPrice, productPhoto } = productData;

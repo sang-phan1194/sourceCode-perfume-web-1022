@@ -1,5 +1,5 @@
 import Skeleton from "react-loading-skeleton";
-import "./product.scss";
+import "../style/product.scss";
 
 export const ProductSkeleton = ({ count }) => {
   return Array(count)
