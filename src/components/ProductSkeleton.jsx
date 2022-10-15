@@ -1,5 +1,5 @@
-import Skeleton from "react-loading-skeleton";
-import "../style/product.scss";
+import Skeleton from "react-loading-skeleton"
+import "../style/product.scss"
 
 export const ProductSkeleton = ({ count }) => {
   return Array(count)
@@ -14,5 +14,5 @@ export const ProductSkeleton = ({ count }) => {
           <Skeleton style={{ width: "10rem", height: "1.5rem" }} />
         </span>
       </div>
-    ));
-};
+    ))
+}

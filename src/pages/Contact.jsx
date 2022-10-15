@@ -1,5 +1,5 @@
-import { Banner } from "../components/Banner";
-import "../style/contact.scss";
+import { Banner } from "../components/Banner"
+import "../style/contact.scss"
 
 export const Contact = () => {
   return (
@@ -59,5 +59,5 @@ export const Contact = () => {
         ></iframe>
       </div>
     </>
-  );
-};
+  )
+}

@@ -1,0 +1,32 @@
+.toast-wrapper {
+  width: 95%;
+  height: 3.6rem;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  top: 6rem;
+  z-index: 1;
+
+  background-color: #fff;
+  border-width: 0.5px 0.5px 0.5px 8px;
+  border-style: solid;
+
+  span {
+    width: 10%;
+  }
+
+  &.addToCart {
+    color: hsl(154, 80%, 40%);
+    border-color: hsl(154, 80%, 40%);
+  }
+
+  &.like {
+    color: hsl(35, 90%, 60%);
+    border-color: hsl(35, 90%, 60%);
+  }
+}

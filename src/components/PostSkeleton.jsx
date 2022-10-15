@@ -1,5 +1,5 @@
-import Skeleton from "react-loading-skeleton";
-import "../style/reviews.scss";
+import Skeleton from "react-loading-skeleton"
+import "../style/reviews.scss"
 
 export const PostSkeleton = ({ count }) => {
   return Array(count)
@@ -17,5 +17,5 @@ export const PostSkeleton = ({ count }) => {
           </p>
         </div>
       </div>
-    ));
-};
+    ))
+}

@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
-import { CartItem } from "./CartItem";
-import "../style/cartItem.scss";
+import { useSelector } from "react-redux"
+import { CartItem } from "./CartItem"
+import "../style/cartItem.scss"
 
 export const Cart = () => {
-  const { itemList } = useSelector((state) => state.cart);
+  const { itemList } = useSelector((state) => state.cart)
   const totalPurchase = [...itemList].reduce(
     (total, cur) => total + cur.itemCount * cur.productPrice,
     0
-  );
+  )
   return (
     <div className="cart">
       {itemList.length !== 0 ? (
@@ -36,5 +36,5 @@ export const Cart = () => {
         </div>
       ) : null}
     </div>
-  );
-};
+  )
+}

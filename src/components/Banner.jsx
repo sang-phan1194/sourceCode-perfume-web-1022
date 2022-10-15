@@ -1,6 +1,6 @@
-import slide1 from "../assets/slide-1.jpg";
-import slide2 from "../assets/slide-2.jpg";
-import slide3 from "../assets/slide-3.png";
+import slide1 from "../assets/slide-1.jpg"
+import slide2 from "../assets/slide-2.jpg"
+import slide3 from "../assets/slide-3.png"
 
 export const Banner = ({ bannerNum }) => {
   return (
@@ -21,5 +21,5 @@ export const Banner = ({ bannerNum }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

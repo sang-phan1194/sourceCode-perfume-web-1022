@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { useEffect, useState } from "react"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../firebase"
 
 export const GetDatas = (dataType) => {
-  const [datas, setDatas] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [datas, setDatas] = useState([])
+  const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
-    let isQuery = true;
+    let isQuery = true
     const getStoreData = async () => {
-      const output = [];
-      const querySnapshot = await getDocs(collection(db, `${dataType}`));
+      const output = []
+      const querySnapshot = await getDocs(collection(db, `${dataType}`))
       if (isQuery) {
         querySnapshot.forEach((doc) => {
           output.push({
             id: doc.id,
             productData: doc.data(),
-          });
-        });
-        setDatas(output);
-        setLoading(false);
+          })
+        })
+        setDatas(output)
+        setLoading(false)
       }
-    };
-    getStoreData();
+    }
+    getStoreData()
 
     return () => {
-      isQuery = false;
-    };
-  }, []);
+      isQuery = false
+    }
+  }, [])
 
-  return { isLoading, datas, setDatas };
-};
+  return { isLoading, datas, setDatas }
+}

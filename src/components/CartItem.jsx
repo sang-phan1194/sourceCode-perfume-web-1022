@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { add_item, remove_item, minus_item } from "../redux/cartSlice";
-import "../style/cartItem.scss";
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { add_item, remove_item, minus_item } from "../redux/cartSlice"
+import "../style/cartItem.scss"
 
 export const CartItem = ({ id, data }) => {
-  const [count, setCount] = useState(data.itemCount);
-  const dispatch = useDispatch();
+  const [count, setCount] = useState(data.itemCount)
+  const dispatch = useDispatch()
   const handleAdd = () => {
-    dispatch(add_item({ ...data, itemCount: 1 }));
-    setCount(data.itemCount + 1);
-  };
+    dispatch(add_item({ ...data, itemCount: 1 }))
+    setCount(data.itemCount + 1)
+  }
   const handleMinus = () => {
     if (count > 1) {
-      setCount(data.itemCount - 1);
-      dispatch(minus_item(id));
+      setCount(data.itemCount - 1)
+      dispatch(minus_item(id))
     }
-  };
+  }
   const handleRemove = () => {
-    dispatch(remove_item(data.productName));
-  };
+    dispatch(remove_item(data.productName))
+  }
 
   return (
     <div className="cartItem">
@@ -45,5 +45,5 @@ export const CartItem = ({ id, data }) => {
         )} VND`}</span>
       </div>
     </div>
-  );
-};
+  )
+}

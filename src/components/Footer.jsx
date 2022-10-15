@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.png"
 import "../style/footer.scss"
 
 export const Footer = () => {
@@ -123,5 +123,5 @@ export const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,48 +1,48 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
-import Skeleton from "react-loading-skeleton";
-import { Banner } from "./Banner";
-import { add_item } from "../redux/cartSlice";
-import "../style/productDetail.scss";
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { useParams } from "react-router-dom"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../firebase"
+import Skeleton from "react-loading-skeleton"
+import { Banner } from "./Banner"
+import { add_item } from "../redux/cartSlice"
+import "../style/productDetail.scss"
 
 export const ProductDetail = () => {
-  const { index } = useParams();
-  const [product, setProduct] = useState({});
-  const [count, setCount] = useState(1);
-  const [isLoading, setLoading] = useState(true);
-  const dispatch = useDispatch();
+  const { index } = useParams()
+  const [product, setProduct] = useState({})
+  const [count, setCount] = useState(1)
+  const [isLoading, setLoading] = useState(true)
+  const dispatch = useDispatch()
   const handleAdd = () => {
     dispatch(
       add_item({
         itemCount: count,
         ...product,
       })
-    );
-  };
+    )
+  }
 
   useEffect(() => {
-    let isQuery = true;
+    let isQuery = true
     const getStoreData = async () => {
-      const docRef = doc(db, "products", index);
-      const docSnap = await getDoc(docRef);
-      let output = {};
+      const docRef = doc(db, "products", index)
+      const docSnap = await getDoc(docRef)
+      let output = {}
       if (docSnap.exists()) {
-        output = { ...docSnap.data() };
-        setProduct(output);
-        setLoading(false);
+        output = { ...docSnap.data() }
+        setProduct(output)
+        setLoading(false)
       } else {
-        console.log("No such product!");
+        console.log("No such product!")
       }
-    };
-    getStoreData();
+    }
+    getStoreData()
 
     return () => {
-      isQuery = false;
-    };
-  }, []);
+      isQuery = false
+    }
+  }, [])
   return (
     <div className="product-detail-wrapper">
       <Banner />
@@ -57,7 +57,7 @@ export const ProductDetail = () => {
             <button
               onClick={() => {
                 if (count > 1) {
-                  setCount(count - 1);
+                  setCount(count - 1)
                 }
               }}
               className="minus-btn"
@@ -136,5 +136,5 @@ export const ProductDetail = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

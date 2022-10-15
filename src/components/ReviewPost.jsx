@@ -16,5 +16,5 @@ export const ReviewPost = ({ id, postData }) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}

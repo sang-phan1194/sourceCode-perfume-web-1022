@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
-import "../style/header.scss";
+import { useState } from "react"
+import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import logo from "../assets/logo.png"
+import "../style/header.scss"
 
 export const Header = () => {
-  const [isToggleOn, setToggleOn] = useState(false);
-  const itemList = useSelector((state) => state.cart.itemList);
-  const totalCount = itemList.reduce((total, cur) => total + cur.itemCount, 0);
+  const [isToggleOn, setToggleOn] = useState(false)
+  const itemList = useSelector((state) => state.cart.itemList)
+  const totalCount = itemList.reduce((total, cur) => total + cur.itemCount, 0)
 
   return (
     <div className="header">
@@ -51,9 +51,6 @@ export const Header = () => {
         </div>
         <div className="icon-group">
           <span>
-            <i className="bi bi-search"></i>
-          </span>
-          <span>
             <i className="bi bi-bookmark-heart"></i>
           </span>
           <span className="cart-icon">
@@ -65,5 +62,5 @@ export const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
