@@ -7,7 +7,6 @@ import "../style/toast.scss"
 export const Toast = () => {
   const dispatch = useDispatch()
   const { status, type } = useSelector((state) => state.toastMess)
-  console.log(status, type)
 
   useEffect(() => {
     const countDown = setTimeout(() => dispatch(autoHide()), 1000)
@@ -15,7 +14,7 @@ export const Toast = () => {
     return () => {
       clearTimeout(countDown)
     }
-  }, [status])
+  }, [status, type])
 
   return (
     <>

@@ -6,6 +6,7 @@ import { db } from "../firebase"
 import Skeleton from "react-loading-skeleton"
 import { Banner } from "./Banner"
 import { add_item } from "../redux/cartSlice"
+import { addToCart } from "../redux/toastMessSlice"
 import "../style/productDetail.scss"
 
 export const ProductDetail = () => {
@@ -21,6 +22,7 @@ export const ProductDetail = () => {
         ...product,
       })
     )
+    dispatch(addToCart())
   }
 
   useEffect(() => {

@@ -61,10 +61,21 @@
     background-color: #212529;
     padding: 3rem 0;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
+    animation: slideFromLeft 0.8s backwards;
+
+    @keyframes slideFromLeft {
+      from {
+        left: -100%;
+      }
+
+      to {
+        left: 0;
+      }
+    }
 
 
     .toggle-btn {

@@ -16,6 +16,17 @@
   background-color: #fff;
   border-width: 0.5px 0.5px 0.5px 8px;
   border-style: solid;
+  animation: show 0.4s backwards;
+
+  @keyframes show {
+    from {
+      right: -100%;
+    }
+
+    to {
+      right: 0;
+    }
+  }
 
   span {
     width: 10%;

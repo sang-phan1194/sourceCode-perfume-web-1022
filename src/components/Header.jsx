@@ -17,10 +17,7 @@ export const Header = () => {
       <Link to="/">
         <img src={logo} alt="page-logo" />
       </Link>
-      <div
-        className={!isToggleOn ? "vertical-menu" : "horizontal-menu"}
-        onMouseLeave={() => setToggleOn(false)}
-      >
+      <div className={!isToggleOn ? "vertical-menu" : "horizontal-menu"}>
         <div className="pages-group">
           <button
             className="toggle-btn"
