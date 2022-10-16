@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom"
+import { useSelector } from "react-redux"
+
 import { Header } from "../src/components/Header"
 import { Cart } from "../src/components/Cart"
 import { Footer } from "../src/components/Footer"
@@ -6,11 +8,15 @@ import { Home } from "../src/pages/Home"
 import { Reviews } from "../src/pages/Reviews"
 import { Contact } from "../src/pages/Contact"
 import { ProductDetail } from "../src/components/ProductDetail"
+import { Toast } from "../src/components/Toast"
 
 function App() {
+  const { status } = useSelector((state) => state.toastMess)
+
   return (
     <div className="app-wrapper">
       <Header />
+      {status && <Toast />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reviews" element={<Reviews />} />

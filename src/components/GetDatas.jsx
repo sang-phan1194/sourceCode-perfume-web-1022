@@ -7,11 +7,11 @@ export const GetDatas = (dataType) => {
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
-    let isQuery = true
+    let isFetching = true
     const getStoreData = async () => {
       const output = []
       const querySnapshot = await getDocs(collection(db, `${dataType}`))
-      if (isQuery) {
+      if (isFetching) {
         querySnapshot.forEach((doc) => {
           output.push({
             id: doc.id,
@@ -25,7 +25,7 @@ export const GetDatas = (dataType) => {
     getStoreData()
 
     return () => {
-      isQuery = false
+      isFetching = false
     }
   }, [])
 

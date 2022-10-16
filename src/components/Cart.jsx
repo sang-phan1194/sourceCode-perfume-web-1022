@@ -8,6 +8,7 @@ export const Cart = () => {
     (total, cur) => total + cur.itemCount * cur.productPrice,
     0
   )
+
   return (
     <div className="cart">
       {itemList.length !== 0 ? (

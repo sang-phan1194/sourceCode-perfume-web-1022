@@ -1,24 +1,36 @@
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../firebase"
 import { Banner } from "../components/Banner"
 import { Product } from "../components/Product"
 import { GetDatas } from "../components/GetDatas"
 import { ProductSkeleton } from "../components/ProductSkeleton"
-// import { useState } from "react"
+import { useState } from "react"
 
 export const Home = () => {
   const { isLoading, datas, setDatas } = GetDatas("products")
-  // const [isSearchingMode, setSearchingMode] = useState(false)
-  // const [query, setQuery] = useState("")
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(query)
-  //   setDatas(
-  //     [...datas].filter((item) =>
-  //       item.productData.productName
-  //         .toLocaleLowerCase()
-  //         .includes(query.toLocaleLowerCase())
-  //     )
-  //   )
-  // }
+  const [isSearchingMode, setSearchingMode] = useState(false)
+  // const [myQuery, setQuery] = useState("")
+  const handleSearch = async (myQuery) => {
+    const output = []
+    const querySnapshot = await getDocs(collection(db, "products"))
+    querySnapshot.forEach((doc) => {
+      output.push({
+        id: doc.id,
+        productData: doc.data(),
+      })
+    })
+    if (myQuery.length > 1) {
+      setDatas(
+        [...output].filter((item) =>
+          item.productData.productName
+            .toLowerCase()
+            .includes(myQuery.toLocaleLowerCase())
+        )
+      )
+    } else {
+      setDatas(output)
+    }
+  }
 
   return (
     <>
@@ -76,23 +88,35 @@ export const Home = () => {
           >
             <i className="bi bi-sort-alpha-up"></i>Giá sản phẩm
           </button>
-          {/* <button onClick={() => setSearchingMode(!isSearchingMode)}>
+          <button
+            className="search-btn"
+            onClick={() => setSearchingMode(!isSearchingMode)}
+          >
             <i className="bi bi-search"></i>
-          </button> */}
+          </button>
+          {isSearchingMode && (
+            <input
+              type="text"
+              onChange={(e) => handleSearch(e.target.value)}
+              placeholder="Nhập nội dung tìm kiếm..."
+              autoFocus
+            />
+          )}
         </div>
-        {/* {isSearchingMode && (
-          <div>
-            <form onSubmit={handleSubmit}>
-              <input type="text" onChange={(e) => setQuery(e.target.value)} />
-              <button type="submit">
-                <i className="bi bi-search"></i>
-              </button>
-            </form>
-          </div>
-        )} */}
 
         {/* render Products by category */}
-        <h2>NƯỚC HOA DESIGNER NAM</h2>
+        <h2>
+          NƯỚC HOA DESIGNER NAM{" "}
+          <small>
+            Có{" "}
+            {
+              [...datas].filter(
+                (item) => item.productData.productCategory === "Designer Nam"
+              ).length
+            }{" "}
+            sản phẩm
+          </small>{" "}
+        </h2>
         <div className="products-container">
           {isLoading ? (
             <ProductSkeleton count={9} />
@@ -110,7 +134,18 @@ export const Home = () => {
               ))
           )}
         </div>
-        <h2>NƯỚC HOA NICHE NAM</h2>
+        <h2>
+          NƯỚC HOA NICHE NAM{" "}
+          <small>
+            Có{" "}
+            {
+              [...datas].filter(
+                (item) => item.productData.productCategory === "Niche Nam"
+              ).length
+            }{" "}
+            sản phẩm
+          </small>
+        </h2>
         <div className="products-container">
           {isLoading ? (
             <ProductSkeleton count={9} />

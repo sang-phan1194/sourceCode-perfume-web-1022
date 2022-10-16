@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
+import { deleteFromCart } from "../redux/toastMessSlice"
 import { add_item, remove_item, minus_item } from "../redux/cartSlice"
 import "../style/cartItem.scss"
 
 export const CartItem = ({ id, data }) => {
   const [count, setCount] = useState(data.itemCount)
   const dispatch = useDispatch()
+
   const handleAdd = () => {
     dispatch(add_item({ ...data, itemCount: 1 }))
     setCount(data.itemCount + 1)
@@ -18,10 +20,12 @@ export const CartItem = ({ id, data }) => {
   }
   const handleRemove = () => {
     dispatch(remove_item(data.productName))
+    dispatch(deleteFromCart())
   }
 
   return (
     <div className="cartItem">
+      {/* Show toast message when add product to cart/favorite list */}
       <div className="itemInfo">
         <img src={data.productPhoto} alt="" />
         <span className="product-name">{data.productName}</span>

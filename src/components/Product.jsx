@@ -1,34 +1,16 @@
-import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { add_item } from "../redux/cartSlice"
-import { Toast } from "./Toast"
+import { addToCart, likeItem } from "../redux/toastMessSlice"
 import "../style/product.scss"
 
 export const Product = ({ index, productData }) => {
   const { productName, brandName, productPrice, productPhoto } = productData
-  const [toast, setToast] = useState({
-    status: false,
-    type: "",
-  })
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const countDown = setTimeout(
-      () => setToast({ status: false, type: "" }),
-      900
-    )
-
-    return () => {
-      clearTimeout(countDown)
-    }
-  }, [toast.status])
-
   return (
     <div className="product">
-      {/* Show toast message when add product to cart */}
-      {toast.status && <Toast type={toast.type} />}
       <img src={productPhoto} alt="" loading="lazy" />
       {/* view product details btn */}
       <div className="btn-group">
@@ -49,7 +31,7 @@ export const Product = ({ index, productData }) => {
                 productPhoto: productPhoto,
               })
             )
-            setToast({ status: true, type: "addToCart" })
+            dispatch(addToCart())
           }}
         >
           <small>Add to cart</small>
@@ -59,7 +41,7 @@ export const Product = ({ index, productData }) => {
         <span
           onClick={(e) => {
             e.stopPropagation()
-            setToast({ status: true, type: "like" })
+            dispatch(likeItem())
           }}
         >
           <small>Favorite</small>
