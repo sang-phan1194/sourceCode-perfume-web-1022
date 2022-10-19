@@ -3,11 +3,13 @@ An E-commercial website selling perfume <br/>
 
 #Features:
 - View the products, sort them by name or price (asc or desc). <br/>
+- Search products by name <br/>
 - Directly add products to cart from homepage or adjust their quantity before adding them to cart in the product detail page. <br/>
 - Adjust products quantity or remove them from cart. <br/>
 - Cart information will be saved and wont be lost after reloading page. <br/>
 - View the review posts on the review page. <br/>
 - Responsive for many screen sizes in all pages (home, reviews, cart, product detail,...). <br/>
+- Sign up/sign in for/with an user account.
 
 #Tech stacks: <br/>
 - ReactJS for creating components. <br/>
