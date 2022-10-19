@@ -48,7 +48,14 @@ export const Header = () => {
         </div>
         <div className="icon-group">
           <span>
-            <i className="bi bi-bookmark-heart"></i>
+            <Link to="/favorite">
+              <i className="bi bi-bookmark-heart"></i>
+            </Link>
+          </span>
+          <span>
+            <Link to="/userInfos">
+              <i className="bi bi-person"></i>
+            </Link>
           </span>
           <span className="cart-icon">
             <Link to="/cart">
