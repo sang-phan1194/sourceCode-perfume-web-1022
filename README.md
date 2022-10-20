@@ -1,7 +1,9 @@
 # sourceCode-perfume-web-1022
+
 An E-commercial website selling perfume <br/>
 
 #Features:
+
 - View the products, sort them by name or price (asc or desc). <br/>
 - Search products by name <br/>
 - Directly add products to cart from homepage or adjust their quantity before adding them to cart in the product detail page. <br/>
@@ -12,6 +14,7 @@ An E-commercial website selling perfume <br/>
 - Sign up/sign in for/with an user account.
 
 #Tech stacks: <br/>
+
 - ReactJS for creating components. <br/>
 - Redux (Toolkit & React - Redux) for state management. <br/>
 - React-router-dom for setting up routing. <br/>

@@ -4,7 +4,6 @@
 .footer {
   display: flex;
   flex-direction: column;
-  // align-items: center;
   gap: 1rem;
   padding: 1rem 4rem;
   font-size: 0.9rem;
@@ -55,9 +54,11 @@
       }
     }
 
-    // .location{
-    //   margin: 0 auto;
-    // }
+    .fblink {
+      img {
+        width: 100%;
+      }
+    }
   }
 
   .line {

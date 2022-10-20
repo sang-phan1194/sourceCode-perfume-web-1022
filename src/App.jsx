@@ -1,6 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom"
+import { useContext } from "react"
 import { useSelector } from "react-redux"
-
+import { Routes, Route, Navigate } from "react-router-dom"
+// import from internal source
+import { AuthContext } from "./context/AuthContext"
 import { Header } from "../src/components/Header"
 import { Footer } from "../src/components/Footer"
 import { Home } from "../src/pages/Home"
@@ -10,10 +12,8 @@ import { Register } from "../src/components/Register"
 import { Login } from "../src/components/Login"
 import { Cart } from "../src/components/Cart"
 import { ProductDetail } from "../src/components/ProductDetail"
-import { Toast } from "../src/components/Toast"
-import { AuthContext } from "./context/AuthContext"
-import { useContext } from "react"
 import { UserInfos } from "./components/UserInfos"
+import { Toast } from "../src/components/Toast"
 
 function App() {
   const { status } = useSelector((state) => state.toastMess)

@@ -6,7 +6,7 @@ import "../style/userInfos.scss"
 
 export const UserInfos = () => {
   const { currentUser } = useContext(AuthContext)
-  console.log(currentUser)
+
   return (
     <div className="userInfos">
       <div className="img-group">
@@ -14,9 +14,30 @@ export const UserInfos = () => {
         <img src={currentUser.photoURL} alt="userAvatar" />
       </div>
       <div className="main-info">
-        <span>Name: {currentUser.displayName}</span>
+        <span>Tên: {currentUser.displayName}</span>
         <span>Email: {currentUser.email}</span>
-        <button onClick={() => signOut(auth)}>Đăng xuất</button>
+        <span>
+          Số điện thoại:{" "}
+          <small> {currentUser.phoneNumber || `Chưa cập nhật`}</small>
+        </span>
+        <small>
+          Là thành viên từ:{" "}
+          {currentUser.metadata["creationTime"].substring(0, 16)}
+        </small>
+        <small>
+          Đăng nhật lần cuối:{" "}
+          {currentUser.metadata["lastSignInTime"].substring(0)}
+        </small>
+        <div className="btn-group">
+          <button onClick={() => signOut(auth)}>
+            {" "}
+            <i className="bi bi-box-arrow-left"></i> Đăng xuất
+          </button>
+          <button id="edit-info">
+            <i className="bi bi-pencil-square"></i>
+            <span> Chỉnh sửa thông tin</span>
+          </button>
+        </div>
       </div>
     </div>
   )

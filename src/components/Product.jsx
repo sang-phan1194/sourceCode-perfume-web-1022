@@ -1,7 +1,11 @@
+// import from external source
+import { useContext } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
+// import from internal source
 import { add_item } from "../redux/cartSlice"
 import { addToCart, likeItem } from "../redux/toastMessSlice"
+import { AuthContext } from "../context/AuthContext"
 import "../style/product.scss"
 
 export const Product = ({ index, productData }) => {
@@ -11,7 +15,7 @@ export const Product = ({ index, productData }) => {
 
   return (
     <div className="product">
-      <img src={productPhoto} alt="" loading="lazy" />
+      <img src={productPhoto} alt="productPhoto" loading="lazy" />
       {/* view product details btn */}
       <div className="btn-group">
         <span onClick={() => navigate(`/product-detail/${index}`)}>

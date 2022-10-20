@@ -30,25 +30,23 @@ export const Register = () => {
               displayName: name,
               photoURL: downloadURL,
             })
-            // create a user collecttion, every document will be the user.uid with two field: favList and saved cart
+            // create a user collection
             await setDoc(doc(db, "userInfos", res.user.uid), {
               name,
               email,
-              phottoURL: downloadURL,
+              photoURL: downloadURL,
               favoriteList: [],
               cart: [],
             })
-            alert("Đăng kí tài khoản thành công!")
+            alert("Đăng kí tài khoản thành công, nhấn OK để tiếp tục!")
             navigate("/login")
           } catch (error) {
-            console.log(error)
             setErr(true)
           }
         })
       })
     } catch (error) {
       setErr(true)
-      console.log(error)
     }
   }
   return (
@@ -64,13 +62,19 @@ export const Register = () => {
         <input type="text" placeholder="Email" required />
         <input type="password" placeholder="Password" required />
         <input id="file" type="file" required />
-        <label htmlFor="file">Thêm ảnh đại diện</label>
+        <label htmlFor="file">
+          <i className="bi bi-card-image"></i> Thêm ảnh đại diện
+        </label>
         <button type="submit">Đăng Kí</button>
       </form>
       <span>
         Bạn đã có tài khoản? Bấm vào đây để <Link to="/login"> đăng nhập</Link>
       </span>
-      {err && <span>Something went wrong!</span>}
+      {err && (
+        <small style={{ color: "red", opacity: 1 }}>
+          Có lỗi xảy ra, vui lòng kiểm tra lại thông tin đã nhập!
+        </small>
+      )}
     </div>
   )
 }

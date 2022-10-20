@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png"
+import fblink from "../assets/facebookLink.png"
 import "../style/footer.scss"
 
 export const Footer = () => {
@@ -90,18 +91,11 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="location">
+        <div className="fblink">
           <h3>KẾT NỐI TRÊN FACEBOOK</h3>
-          <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fblancperfumevn%2F&tabs=timeline&width=300&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-            width="300"
-            height="150"
-            style={{ border: "none", overflow: "hidden" }}
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
-          ></iframe>
+          <a href="https://www.facebook.com/" target={"_blank"}>
+            <img src={fblink} alt="fblink" />
+          </a>
         </div>
       </div>
       <div className="line"></div>

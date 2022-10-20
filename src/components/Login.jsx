@@ -13,12 +13,11 @@ export const Login = () => {
     const password = e.target[1].value
     try {
       await signInWithEmailAndPassword(auth, email, password).then((res) =>
-        console.log(res.user)
+        alert("Đăng nhập thành công, nhấn OK để tiếp tục!")
       )
       navigate("/userInfos")
     } catch (error) {
       setErr(true)
-      console.log(error)
     }
   }
   return (
@@ -29,6 +28,7 @@ export const Login = () => {
         </span>{" "}
         ĐĂNG NHẬP
       </h2>
+      <small>Vui lòng đăng nhập để tiếp tục</small>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Nhập email đăng kí" required />
         <input type="password" placeholder="Nhập mật khẩu" required />
@@ -38,6 +38,11 @@ export const Login = () => {
         Bạn chưa có tài khoản? Bấm vào đây để{" "}
         <Link to="/register"> đăng kí</Link>
       </span>
+      {err && (
+        <small style={{ color: "red", opacity: 1 }}>
+          Có lỗi xảy ra, vui lòng kiểm tra lại tài khoản hoặc mật khẩu.
+        </small>
+      )}
     </div>
   )
 }

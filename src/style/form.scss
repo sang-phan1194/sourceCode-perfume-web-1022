@@ -2,19 +2,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
   width: 70%;
   margin: 4rem auto;
 
   h2 {
     font-size: 1.8rem;
+    margin: 0 auto;
+  }
+
+  small {
+    margin-top: -0.5rem;
+    color: green;
+    opacity: 0.7;
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-
 
     input {
       width: 25rem;
@@ -23,18 +29,14 @@
 
     button {
       height: 2rem;
-      background-color: hsl(120, 95%, 32%);
-      cursor: pointer;
       font-size: inherit;
+      color: azure;
+      background-color: hsl(120, 92%, 32%);
+      cursor: pointer;
 
       &:hover {
         opacity: 0.8;
       }
-    }
-
-    button[type=reset] {
-      background-color: hsl(0, 100%, 65%);
-      width: 5rem;
     }
 
     input,
@@ -73,5 +75,9 @@
 
   span:last-child {
     margin-top: 1rem;
+
+    a {
+      color: cornflowerblue;
+    }
   }
 }

@@ -34,23 +34,10 @@ export const Header = () => {
           <span>
             <Link to="/contact">Contact</Link>
           </span>
-          {/* <span className="admin-navbar">
-            Admin
-            <ul className="dropdown">
-              <span>
-                <Link to="/add-product">Add Product</Link>
-              </span>
-              <span>
-                <Link to="/add-post">Add Post</Link>
-              </span>
-            </ul>
-          </span> */}
         </div>
         <div className="icon-group">
           <span>
-            <Link to="/favorite">
-              <i className="bi bi-bookmark-heart"></i>
-            </Link>
+            <i className="bi bi-bookmark-heart"></i>
           </span>
           <span>
             <Link to="/userInfos">
