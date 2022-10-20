@@ -2,6 +2,10 @@
 
 An E-commercial website selling perfume <br/>
 
+Test account: <br />
+acc: conmuc@gmail.com <br />
+pass: muc1234 <br />
+
 #Features:
 
 - View the products, sort them by name or price (asc or desc). <br/>
